@@ -1,18 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterModule } from '@angular/router';
-import { appRoutes } from './app.routes';
+import {AppComponent} from './app.component';
+import {RouterModule} from '@angular/router';
+
+// @angular-redux = [libs/auth/src/index.ts] in tsconfig.base.json
+import {authRoutes, AuthModule} from '@angular-redux/auth';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    // added module
+    AuthModule,
+    //added path
+    RouterModule.forRoot(
+      [
+        {path: 'auth', children: authRoutes}
+      ],
+      {initialNavigation: 'enabledBlocking'}),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
