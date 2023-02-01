@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-redux/auth": ["libs/auth/src/index.ts"]
+      "@angular-redux/auth": ["libs/auth/src/index.ts"],
+      "@angular-redux/data-models": ["libs/data-models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
