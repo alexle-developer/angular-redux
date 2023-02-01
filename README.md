@@ -9,6 +9,20 @@ The **Angular-Reduxr** project will walk through a thorough introduction into us
 
 <br><br>
 
+## Run individual project
+
+```
+nx serve <project-name>
+
+Example: nx serve customer-portal
+```
+
+## Remove an application from the Nx Monorepo
+
+```
+npx nx generate @nrwl/workspace:remove --projectName=name
+```
+
 # Angular Redux
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

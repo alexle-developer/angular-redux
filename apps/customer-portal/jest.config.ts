@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'nx-integrated-repo',
+  displayName: 'customer-portal',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/nx-integrated-repo',
+  coverageDirectory: '../../coverage/apps/customer-portal',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
