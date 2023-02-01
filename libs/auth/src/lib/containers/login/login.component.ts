@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class LoginComponent {
 
-  login(authenticate: any) {
+  login(authenticate: unknown) {
     console.log(authenticate);
   }
 
