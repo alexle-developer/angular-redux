@@ -19,6 +19,8 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+<br>
+<br>
 
 # Angular applications with NgRx and Nx
 
@@ -56,3 +58,43 @@ Example: nx serve customer-portal
 ```
 npx nx generate @nrwl/workspace:remove --projectName=name
 ```
+
+  <br>
+  <br>
+
+# JSON-SERVER Setup
+
+1. install JSON-SERVER globablly (if you have not done it already)
+   ```
+   npm install -g json-server
+   ```
+2. install JSON-SERVER in the root of your project
+   ```
+   npm install json-server --save-dev
+   ```
+3. make a new folder called "server" in the root of your project (e.g. nx-angular\server)
+4. add a file call db.json for mock data (you can view the content of this file in the project)
+5. add this command **"json-server": "json-server server/db.json"** to the package.json under the script section
+   ```json
+     "scripts": {
+         "start": "nx serve",
+         "build": "nx build",
+         "test": "nx test",
+         "json-server": "json-server server/db.json"
+       },
+   ```
+6. run JSON-SERVER locally using command line
+   ```
+   npm run json-server
+   ```
+7. Navigate to localhost:3000 in the browser
+
+   You should see the messge below
+
+   > JSON Server
+   >
+   > Congrats!
+   >
+   > You're successfully running JSON Server
+
+8. Resource: https://www.geeksforgeeks.org/json-server-setup-and-introduction/
