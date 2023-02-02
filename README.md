@@ -40,6 +40,7 @@ The **Angular-Reduxr** project will walk through a thorough introduction into us
 - nx generate @nrwl/angular:lib auth --routing (new lib called auth)
 - nx generate @nrwl/angular:component containers/login --project=auth (new container component to the auth lib)
 - nx generate @nrwl/angular:component components/login-form --project=auth (new presentational component to the auth lib)
+- nx generate @nrwl/angular:service services/auth/auth --project=auth (new service in the auth lib)
 
 <br><br>
 
