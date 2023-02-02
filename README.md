@@ -81,12 +81,12 @@ npx nx generate @nrwl/workspace:remove --projectName=name
          "start": "nx serve",
          "build": "nx build",
          "test": "nx test",
-         "json-server": "json-server server/db.json"
+         "server": "json-server server/db.json"
        },
    ```
 6. run JSON-SERVER locally using command line
    ```
-   npm run json-server
+   npm run server
    ```
 7. Navigate to localhost:3000 in the browser
 

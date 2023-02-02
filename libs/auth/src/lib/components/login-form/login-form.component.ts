@@ -11,6 +11,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 
 export class LoginFormComponent {
+  // make sure the caller component uses submitEvent as parameter
   @Output() submitEvent = new EventEmitter<Authenticate>();
 
   login(authenticate: Authenticate) {

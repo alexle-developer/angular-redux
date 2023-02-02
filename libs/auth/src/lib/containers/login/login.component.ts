@@ -1,4 +1,6 @@
+import {Authenticate} from '@angular-redux/data-models';
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {AuthService} from '../../services/auth/auth.service';
 
 // Change the ChangeDetectionStrategy to OnPush
 
@@ -10,8 +12,12 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 })
 export class LoginComponent {
 
-  login(authenticate: unknown) {
-    console.log(authenticate);
+  constructor (private authService: AuthService) { }
+
+  // Note the .subscribe() is needed to make sure the observer is registered
+  // with the observable returned from our AuthService.
+  login(authenticate: Authenticate): void {
+    this.authService.login(authenticate).subscribe();
   }
 
 }

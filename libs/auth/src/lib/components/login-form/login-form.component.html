@@ -1,9 +1,11 @@
 <p>login-form works!</p>
-
 <input #username
        placeholder="username"
+       type="text">
+<input #email
+       placeholder="email"
        type="text">
 <input #password
        placeholder="password"
        type="text">
-<button (click)="login({username: username.value, password: password.value})">Login</button>
+<button (click)="login({username:username.value,email: email.value, password: password.value})">Login</button>

@@ -3,24 +3,24 @@
     {
       "id": 1,
       "username": "admin",
-      "country": "usa",
+      "email": "admin@test.org",
       "password": "123"
     },
     {
       "id": 2,
       "username": "Sarah",
-      "country": "england",
+      "email": "sarah@test.org",
       "password": "123"
     },
     {
       "id": 3,
       "username": "Duncan",
-      "country": "australia",
+      "email": "duncan@test.org",
       "password": "123"
     },
     {
       "username": "Alex",
-      "country": "usa",
+      "email": "alex@test.org",
       "password": "123",
       "id": 4
     }
