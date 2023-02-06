@@ -17,7 +17,7 @@ export class LoginComponent {
   // Note the .subscribe() is needed to make sure the observer is registered
   // with the observable returned from our AuthService.
   login(authenticate: Authenticate): void {
-    this.authService.login(authenticate).subscribe();
+    this.authService.login(authenticate).subscribe(x => console.log(x));
   }
 
 }

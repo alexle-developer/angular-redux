@@ -3,25 +3,25 @@
     {
       "id": 1,
       "username": "admin",
-      "email": "admin@test.org",
-      "password": "123"
+      "email": "admin@email.com",
+      "password": "p@55word123456"
     },
     {
       "id": 2,
       "username": "Sarah",
-      "email": "sarah@test.org",
-      "password": "123"
+      "email": "sarah@email.com",
+      "password": "p@55word123456"
     },
     {
       "id": 3,
       "username": "Duncan",
-      "email": "duncan@test.org",
-      "password": "123"
+      "email": "duncan@email.com",
+      "password": "p@55word123456"
     },
     {
       "username": "Alex",
-      "email": "alex@test.org",
-      "password": "123",
+      "email": "alex@email.com",
+      "password": "p@55word123456",
       "id": 4
     }
   ],

@@ -81,7 +81,7 @@ npx nx generate @nrwl/workspace:remove --projectName=name
          "start": "nx serve",
          "build": "nx build",
          "test": "nx test",
-         "server": "json-server server/db.json"
+         "server": "node server/server.js"
        },
    ```
 6. run JSON-SERVER locally using command line
@@ -98,4 +98,6 @@ npx nx generate @nrwl/workspace:remove --projectName=name
    >
    > You're successfully running JSON Server
 
-8. Resource: https://www.geeksforgeeks.org/json-server-setup-and-introduction/
+8. Click on the endpoints and the results should match the content of db.json file
+
+9. Resource: https://www.geeksforgeeks.org/json-server-setup-and-introduction/
