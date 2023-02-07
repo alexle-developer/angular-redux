@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Route} from '@angular/router';
 import {LoginComponent} from './containers/login/login.component';
 import {LoginFormComponent} from './components/login-form/login-form.component';
+import {MaterialModule} from '@angular-redux/material';
 
 // authRoutes is also exported in the lib.routes.ts
 // therefore, we commented it out in the libs\auth\src\index.ts
@@ -12,7 +13,12 @@ export const authRoutes: Route[] = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    MaterialModule
+  ],
   declarations: [LoginComponent, LoginFormComponent],
 })
 export class AuthModule { }
