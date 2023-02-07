@@ -63,7 +63,7 @@ npx nx generate @nrwl/workspace:remove --projectName=name
   <br>
   <br>
 
-# JSON-SERVER Setup
+## JSON-SERVER Setup
 
 1. install JSON-SERVER globablly (if you have not done it already)
    ```
@@ -101,3 +101,20 @@ npx nx generate @nrwl/workspace:remove --projectName=name
 8. Click on the endpoints and the results should match the content of db.json file
 
 9. Resource: https://www.geeksforgeeks.org/json-server-setup-and-introduction/
+
+  <br>
+  <br>
+
+## Install Angular Material
+
+1. Install angular material, angular animations and angular flex layout
+
+   > **Note:**
+   > As of Angular v6 you no longer need to manually add Angular material
+   > you can use the new "Add" CLI command. However this is not how you do it with Nx.
+   >
+   > Always use the same Major version of Material as your Angular CLI and packages.
+
+   ```
+   npm install @angular/material @angular/cdk @angular/flex-layout @angular/animations --save
+   ```
