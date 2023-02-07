@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 
@@ -11,9 +11,8 @@ import {authRoutes, AuthModule} from '@angular-redux/auth';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    // added module
+    BrowserAnimationsModule, // for angular animations
     AuthModule,
-    //added path
     RouterModule.forRoot(
       [
         {path: 'auth', children: authRoutes}
