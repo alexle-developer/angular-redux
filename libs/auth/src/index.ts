@@ -1,4 +1,9 @@
+
+// In index.ts, we can export all folder specific components and modules.
+// The
+
 export * from './lib/auth.module';
+export {AuthService} from './lib/services/auth/auth.service';
 
 // auth.module has already exported a member named 'authRoutes'
 // authRoutes is also exported from lib.routes.ts
