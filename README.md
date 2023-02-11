@@ -42,6 +42,8 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - nx generate @nrwl/angular:component components/login-form --project=auth (new presentational component to the auth lib)
 - nx generate @nrwl/angular:service services/auth/auth --project=auth (new service in the auth lib)
 - nx generate @nrwl/angular:lib material (new Nx lib for angular material)
+- nx generate @nrwl/angular:lib layout (new Layout lib)
+- nx generate @nrwl/angular:component containers/layout --project=layout (add a layout container to project layout)
 
 <br><br>
 
