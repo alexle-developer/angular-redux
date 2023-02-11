@@ -1,36 +1,34 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
-    <form fxLayout="column"
+    <form [formGroup]="loginForm"
+          fxLayout="column"
           fxLayoutAlign="center none">
       <mat-form-field>
         <input matInput
                placeholder="username"
                type="text"
-               #username>
+               formControlName="username">
+        <mat-error>
+          <span *ngIf="loginForm.get('username')?.hasError('required') && loginForm.touched">Required Field</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput
                placeholder="password"
                type="text"
-               #password>
+               formControlName="password">
+        <mat-error>
+          <span *ngIf="loginForm.get('password')?.hasError('required') && loginForm.touched">Required Field</span>
+        </mat-error>
       </mat-form-field>
     </form>
     <button mat-raised-button
-            (click)="login({username:username.value, password:password.value})">login</button>
+            (click)="login()">login</button>
   </mat-card-content>
 </mat-card>
 
-<!--
-  <p>login-form works!</p>
-<input #username
-       placeholder="username"
-       type="text">
-<input #email
-       placeholder="email"
-       type="text">
-<input #password
-       placeholder="password"
-       type="text">
-<button (click)="login({username:username.value,email: email.value, password: password.value})">Login</button>
- -->
+<!-- TODO: FOR DEBUGGING -->
+<pre>
+{{loginForm.value | json}}
+</pre>
