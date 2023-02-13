@@ -12,4 +12,6 @@ import {RouterModule} from '@angular/router';
   declarations: [LayoutComponent],
   exports: [LayoutComponent]
 })
+
+// TODO: import it into AppModule
 export class LayoutModule { }

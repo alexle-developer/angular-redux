@@ -1,3 +1,4 @@
+import {LayoutModule} from '@angular-redux/layout';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,6 +14,7 @@ import {authRoutes, AuthModule} from '@angular-redux/auth';
     BrowserModule,
     BrowserAnimationsModule, // for angular animations
     AuthModule,
+    LayoutModule,
     RouterModule.forRoot(
       [
         {path: 'auth', children: authRoutes}
