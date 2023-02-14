@@ -18,7 +18,8 @@
       "@angular-redux/auth": ["libs/auth/src/index.ts"],
       "@angular-redux/data-models": ["libs/data-models/src/index.ts"],
       "@angular-redux/layout": ["libs/layout/src/index.ts"],
-      "@angular-redux/material": ["libs/material/src/index.ts"]
+      "@angular-redux/material": ["libs/material/src/index.ts"],
+      "@angular-redux/products": ["libs/products/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

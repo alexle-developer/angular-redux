@@ -35,6 +35,8 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 ## Nx Commands
 
+### We can also use the Nx Console UI to create these commands
+
 - npx create-nx-workspace@latest (new nx workspace)
 - nx generate @nrwl/angular:app customer-portal --routing (new customer-portal app)
 - nx generate @nrwl/angular:lib auth --routing (new lib called auth)
@@ -44,15 +46,16 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - nx generate @nrwl/angular:lib material (new Nx lib for angular material)
 - nx generate @nrwl/angular:lib layout (new Layout lib)
 - nx generate @nrwl/angular:component containers/layout --project=layout (add a layout container to project layout)
+- nx generate @nrwl/angular:lib products --routing --lazy --parent=apps/customer-portal/src/app/app.module (add a lazy loaded lib with routing)
 
 <br><br>
 
 ## Run individual project
 
+Example: nx serve customer-portal <project-name>
+
 ```
 nx serve <project-name>
-
-Example: nx serve customer-portal
 ```
 
 <br>
@@ -69,24 +72,30 @@ npx nx generate @nrwl/workspace:remove --projectName=name
 ## JSON-SERVER Setup
 
 1. install JSON-SERVER globablly (if you have not done it already)
-   ```
-   npm install -g json-server
-   ```
+
+```
+npm install -g json-server
+```
+
 2. install JSON-SERVER in the root of your project
-   ```
-   npm install json-server --save-dev
-   ```
+
+```
+npm install json-server --save-dev
+```
+
 3. make a new folder called "server" in the root of your project (e.g. nx-angular\server)
 4. add a file call db.json for mock data (you can view the content of this file in the project)
 5. add this command **"json-server": "json-server server/db.json"** to the package.json under the script section
-   ```json
-     "scripts": {
-         "start": "nx serve",
-         "build": "nx build",
-         "test": "nx test",
-         "server": "node server/server.js"
-       },
-   ```
+
+```json
+  "scripts": {
+      "start": "nx serve",
+      "build": "nx build",
+      "test": "nx test",
+      "server": "node server/server.js"
+    },
+```
+
 6. run JSON-SERVER locally using command line
    ```
    npm run server
