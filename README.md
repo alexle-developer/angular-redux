@@ -47,6 +47,7 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - nx generate @nrwl/angular:lib layout (new Layout lib)
 - nx generate @nrwl/angular:component containers/layout --project=layout (add a layout container to project layout)
 - nx generate @nrwl/angular:lib products --routing --lazy --parent=apps/customer-portal/src/app/app.module (add a lazy loaded lib with routing)
+- nx g @nrwl/angular:component containers/products --project=products (add a products container component)
 
 <br><br>
 
