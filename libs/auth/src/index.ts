@@ -12,6 +12,7 @@
 
 export * from './lib/auth.module';
 export {AuthService} from './lib/services/auth/auth.service';
+export {AuthGuard} from './lib/guards/auth/auth.guard';
 
 // auth.module has already exported a member named 'authRoutes'
 // authRoutes is also exported from lib.routes.ts

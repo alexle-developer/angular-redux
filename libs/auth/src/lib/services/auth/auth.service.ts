@@ -8,13 +8,8 @@ import {BehaviorSubject, Observable, tap} from 'rxjs';
 })
 export class AuthService {
 
-  initializeUser: User = {
-    username: "",
-    id: 0,
-    country: "",
-    token: "",
-    role: ""
-  };
+  initializeUser!: User;
+
   // To initialize the BehaviorSubject with null value
   // you must define the type as User | null.  Otherwise,
   // you will get the 'null is not assignable to parameter of type User'
