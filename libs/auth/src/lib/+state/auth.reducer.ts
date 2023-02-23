@@ -1,25 +1,48 @@
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, on, Action } from '@ngrx/store';
+import {User} from '@angular-redux/data-models';
+import {EntityState, EntityAdapter, createEntityAdapter} from '@ngrx/entity';
+import {createReducer, on, Action} from '@ngrx/store';
 
 import * as AuthActions from './auth.actions';
-import { AuthEntity } from './auth.models';
+import {AuthEntity} from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
-export interface AuthState extends EntityState<AuthEntity> {
+// Add default state and interface
+
+/**
+ * Interface for the 'Auth' data used in
+ *  - AuthState, and
+ *  - authReducer
+ */
+export interface AuthData {
+  loading: boolean;
+  user: User;
+  error: Error;
+}
+
+/**
+ * Interface to the part of the Store containing AuthState
+ * and other information related to AuthData.
+ */
+export interface AuthState {
+  readonly auth: AuthData;
+}
+
+// rename AuthState to State
+export interface State extends EntityState<AuthEntity> {
   selectedId?: string | number; // which Auth record has been selected
   loaded: boolean; // has the Auth list been loaded
   error?: string | null; // last known error (if any)
 }
 
 export interface AuthPartialState {
-  readonly [AUTH_FEATURE_KEY]: AuthState;
+  readonly [AUTH_FEATURE_KEY]: State;
 }
 
 export const authAdapter: EntityAdapter<AuthEntity> =
   createEntityAdapter<AuthEntity>();
 
-export const initialAuthState: AuthState = authAdapter.getInitialState({
+export const initialAuthState: State = authAdapter.getInitialState({
   // set initial required properties
   loaded: false,
 });
@@ -31,12 +54,12 @@ const reducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(AuthActions.loadAuthSuccess, (state, { auth }) =>
-    authAdapter.setAll(auth, { ...state, loaded: true })
+  on(AuthActions.loadAuthSuccess, (state, {auth}) =>
+    authAdapter.setAll(auth, {...state, loaded: true})
   ),
-  on(AuthActions.loadAuthFailure, (state, { error }) => ({ ...state, error }))
+  on(AuthActions.loadAuthFailure, (state, {error}) => ({...state, error}))
 );
 
-export function authReducer(state: AuthState | undefined, action: Action) {
+export function authReducer(state: State | undefined, action: Action) {
   return reducer(state, action);
 }

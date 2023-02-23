@@ -16,13 +16,28 @@ export const loadAuthFailure = createAction(
 );
 
 
-// add login action creators
+
+/**
+Action Hygiene
+
+- Actions should capture unique events not commands
+- Try not to reuse actions and make generic actions
+- Suffix your Action types with their source so you know where they are dispatched from like Login = '[Login Page] Login'
+- Let effects and reducers be the decision maker not the component and add multiple cases to a switch statement or effects.
+- Avoid action sub typing by adding conditional information to a property of an action payload by making multiple actions for each case. This makes it easier to test and avoids complicated conditional logic in effects and reducers.
+- Write actions first
+
+ */
+
+
+// Strong Typing the State and Actions
 export enum AuthActionTypes {
   Login = '[Auth Page] Login',
   LoginSuccess = '[Auth API] Login Success',
   LoginFail = '[Auth API] Login Fail'
 }
 
+// add login action creators
 export const login = createAction(
   AuthActionTypes.Login,
   props<{payload: Authenticate;}>()
