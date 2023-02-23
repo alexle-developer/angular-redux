@@ -1,3 +1,7 @@
+export * from './lib/+state/auth.models';
+export * from './lib/+state/auth.selectors';
+export * from './lib/+state/auth.reducer';
+export * from './lib/+state/auth.actions';
 
 // In index.ts, we can export all folder specific components and modules.
 //
@@ -11,8 +15,8 @@
 //path @angular-redux/auth for this index.ts
 
 export * from './lib/auth.module';
-export {AuthService} from './lib/services/auth/auth.service';
-export {AuthGuard} from './lib/guards/auth/auth.guard';
+export { AuthService } from './lib/services/auth/auth.service';
+export { AuthGuard } from './lib/guards/auth/auth.guard';
 
 // auth.module has already exported a member named 'authRoutes'
 // authRoutes is also exported from lib.routes.ts

@@ -7,21 +7,26 @@ import {RouterModule, Routes} from '@angular/router';
 
 // @angular-redux = [libs/auth/src/index.ts] in tsconfig.base.json
 import {authRoutes, AuthModule, AuthGuard} from '@angular-redux/auth';
-
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
 
 export const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'products'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'products',
   },
   {
-    path: 'auth', children: authRoutes
+    path: 'auth',
+    children: authRoutes,
   },
   {
     path: 'products',
-    loadChildren: () => import('@angular-redux/products').then((m) => m.ProductsModule),
-    canActivate: [AuthGuard],      // added auth guard
+    loadChildren: () =>
+      import('@angular-redux/products').then((m) => m.ProductsModule),
+    canActivate: [AuthGuard], // added auth guard
   },
-
 ];
 
 @NgModule({
@@ -31,12 +36,21 @@ export const routes: Routes = [
     BrowserAnimationsModule, // for angular animations
     AuthModule,
     LayoutModule,
-    RouterModule.forRoot(
-      routes,
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+    StoreModule.forRoot(
+      {},
       {
-        initialNavigation: 'enabledBlocking'
+        metaReducers: [],
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true,
+        },
       }
     ),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
