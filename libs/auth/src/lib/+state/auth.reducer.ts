@@ -42,8 +42,9 @@ export interface AuthPartialState {
 export const authAdapter: EntityAdapter<AuthEntity> =
   createEntityAdapter<AuthEntity>();
 
+// set initial required properties
 export const initialAuthState: State = authAdapter.getInitialState({
-  // set initial required properties
+  action: AuthActions, // from auth.actions.ts
   loaded: false,
 });
 
@@ -57,7 +58,18 @@ const reducer = createReducer(
   on(AuthActions.loadAuthSuccess, (state, {auth}) =>
     authAdapter.setAll(auth, {...state, loaded: true})
   ),
-  on(AuthActions.loadAuthFailure, (state, {error}) => ({...state, error}))
+  on(AuthActions.loadAuthFailure, (state, {error}) => ({...state, error})),
+  on(AuthActions.login, (state) => ({...state, loading: true})),
+  on(AuthActions.loginSuccess, (state) => ({
+    ...state,
+    user: AuthActions.loginSuccess,
+    loading: false,
+  })),
+  on(AuthActions.loginFailure, (state) => ({
+    ...state,
+    user: null,
+    loading: false,
+  }))
 );
 
 export function authReducer(state: State | undefined, action: Action) {
